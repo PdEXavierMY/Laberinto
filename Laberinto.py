@@ -16,8 +16,11 @@ def comparacion(i, j):
         laberinto[i].append(" ")
     return laberinto
 
-for i in range(ultima_coordenada + 1):
-    for j in range(ultima_coordenada + 1):
-        comparacion(i, j)
+def caca():
+        for i in range(ultima_coordenada + 1):
+            for j in range(ultima_coordenada + 1):
+                print(i, j)
+                comparacion(i, j)
 
+comparacion(0, 0)
 print(laberinto)
