@@ -5,16 +5,19 @@ laberinto = [[]] * (ultima_coordenada + 1)
 
 print(laberinto)
 
-def construccion(i, j):
-    for k in muro:
-        if k == (i, j):
+def comparacion(i, j):
+    haymuro = False
+    for k in range(estructura):
+        if muro[k] == (i, j):
             laberinto[i].append("X")
-        else:
-            laberinto[i].append(" ")
+            haymuro = True
+            break
+    if haymuro == False:
+        laberinto[i].append(" ")
+    return laberinto
 
-for i in range(5):
-    for j in range(5):
-        construccion(i, j)
+for i in range(ultima_coordenada + 1):
+    for j in range(ultima_coordenada + 1):
+        comparacion(i, j)
 
 print(laberinto)
-print(estructura)
