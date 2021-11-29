@@ -4,13 +4,13 @@ filas = 5
 columnas = 5
 #Se define con antelación el número de filas y columnas del laberinto
 laberinto = [[]]
-for p in range(filas - 1):
+for l in range(filas - 1):
     laberinto += [[]]
 
 def comparacion(i, j):
     haymuro = False
-    for k in range(estructura):
-        if muro[k] == (i, j):
+    for valor in range(estructura):
+        if muro[valor] == (i, j):
             laberinto[i].append("X")
             haymuro = True
             break
