@@ -36,6 +36,7 @@ for i in range(columnas + 1):
     techo_y_suelo[0] += ["X"]
 laberinto = techo_y_suelo + laberinto
 laberinto += techo_y_suelo
+print("")
 for z in range(len(laberinto) - 1):
     print(str(laberinto[z]) +  ",")
 print(laberinto[len(laberinto) - 1])
@@ -72,8 +73,8 @@ print(laberinto[len(laberinto) - 1])
 
 laberinto.pop()
 laberinto.pop(0)
+print("")
 for z in range(len(laberinto) - 1):
     print(str(laberinto[z]) +  ",")
 print(laberinto[len(laberinto) - 1])
-print("")
 print(movimientos)
