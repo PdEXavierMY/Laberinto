@@ -69,4 +69,11 @@ print("")
 for z in range(len(laberinto) - 1):
     print(str(laberinto[z]) +  ",")
 print(laberinto[len(laberinto) - 1])
+
+laberinto.pop()
+laberinto.pop(0)
+for z in range(len(laberinto) - 1):
+    print(str(laberinto[z]) +  ",")
+print(laberinto[len(laberinto) - 1])
+print("")
 print(movimientos)
