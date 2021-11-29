@@ -40,33 +40,32 @@ for z in range(len(laberinto) - 1):
     print(str(laberinto[z]) +  ",")
 print(laberinto[len(laberinto) - 1])
 
-def recorrido(i = 1, j = 1):
-    movimientos = []
-    condicion = True
-    while condicion == True:
-        if laberinto[i + 1][j] == " ":
-            laberinto[i][j] = "."
-            movimientos += ["Abajo"]
-            i += 1
-        elif laberinto[i - 1][j] == " ":
-            laberinto[i][j] = "."
-            movimientos += ["Arriba"]
-            i -= 1
-        elif laberinto[i][j + 1] == " ":
-            laberinto[i][j] = "."
-            movimientos += ["Derecha"]
-            j += 1
-        elif laberinto[i][j - 1] == " ":
-            laberinto[i][j] = "."
-            movimientos += ["Izquierda"]
-            j -= 1
-        else:
-            condicion = False
-    return movimientos, laberinto
+i = 1
+j = 1
+movimientos = []
+condicion = True
+while condicion == True:
+    if laberinto[i + 1][j] == " ":
+        laberinto[i][j] = "."
+        movimientos += ["Abajo"]
+        i += 1
+    elif laberinto[i - 1][j] == " ":
+        laberinto[i][j] = "."
+        movimientos += ["Arriba"]
+        i -= 1
+    elif laberinto[i][j + 1] == " ":
+        laberinto[i][j] = "."
+        movimientos += ["Derecha"]
+        j += 1
+    elif laberinto[i][j - 1] == " ":
+        laberinto[i][j] = "."
+        movimientos += ["Izquierda"]
+        j -= 1
+    else:
+        laberinto[i][j] = "."
+        condicion = False
 
 print("")
-movimientos = recorrido(i, j)[0]
-laberinto = recorrido(i, j)[1]
 for z in range(len(laberinto) - 1):
     print(str(laberinto[z]) +  ",")
 print(laberinto[len(laberinto) - 1])
