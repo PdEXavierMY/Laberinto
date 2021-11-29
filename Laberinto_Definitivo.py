@@ -64,6 +64,14 @@ while condicion == True:
         j -= 1
     else:
         laberinto[i][j] = "."
+        if laberinto[i + 1][j] == "S":
+            movimientos += ["Abajo"]
+        elif laberinto[i - 1][j] == "S":
+            movimientos += ["Arriba"]
+        elif laberinto[i][j + 1] == "S":
+            movimientos += ["Derecha"]
+        elif laberinto[i][j - 1] == "S":
+            movimientos += ["Izquierda"]
         condicion = False
 
 print("")
@@ -73,6 +81,9 @@ print(laberinto[len(laberinto) - 1])
 
 laberinto.pop()
 laberinto.pop(0)
+for c in range(columnas):
+    laberinto[c].pop()
+    laberinto[c].pop(0)
 print("")
 for z in range(len(laberinto) - 1):
     print(str(laberinto[z]) +  ",")
