@@ -32,25 +32,25 @@ movimientos = []
 for i in range(filas):
     for j in range(columnas):
         if laberinto[i + 1][j] == IndexError:
-            pass
+            continue
         else: 
             if laberinto[i + 1][j] == " ":
                 laberinto[i][j] = "."
                 movimientos += "Abajo"
             if laberinto[i - 1][j] == IndexError:
-                pass
+                continue
             else: 
                 if laberinto[i - 1][j] == " ":
                     laberinto[i][j] = "."
                     movimientos += "Arriba"
                 if laberinto[i][j + 1] == IndexError:
-                    pass
+                    continue
                 else: 
                     if laberinto[i][j + 1] == " ":
                         laberinto[i][j] = "."
                         movimientos += "Derecha"
                     if laberinto[i][j - 1] == IndexError:
-                        pass
+                        continue
                     else: 
                         if laberinto[i][j - 1] == " ":
                             laberinto[i][j] = "."
