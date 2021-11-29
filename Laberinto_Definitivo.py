@@ -42,22 +42,26 @@ print(laberinto[len(laberinto) - 1])
 
 def recorrido(i = 1, j = 1):
     movimientos = []
-    if laberinto[i + 1][j] == " ":
-        laberinto[i][j] = "."
-        movimientos += ["Abajo"]
-        i += 1
-    elif laberinto[i - 1][j] == " ":
-        laberinto[i][j] = "."
-        movimientos += ["Arriba"]
-        i -= 1
-    elif laberinto[i][j + 1] == " ":
-        laberinto[i][j] = "."
-        movimientos += ["Derecha"]
-        j += 1
-    elif laberinto[i][j - 1] == " ":
-        laberinto[i][j] = "."
-        movimientos += ["Izquierda"]
-        j -= 1
+    condicion = True
+    while condicion == True:
+        if laberinto[i + 1][j] == " ":
+            laberinto[i][j] = "."
+            movimientos += ["Abajo"]
+            i += 1
+        elif laberinto[i - 1][j] == " ":
+            laberinto[i][j] = "."
+            movimientos += ["Arriba"]
+            i -= 1
+        elif laberinto[i][j + 1] == " ":
+            laberinto[i][j] = "."
+            movimientos += ["Derecha"]
+            j += 1
+        elif laberinto[i][j - 1] == " ":
+            laberinto[i][j] = "."
+            movimientos += ["Izquierda"]
+            j -= 1
+        else:
+            condicion = False
     return movimientos, laberinto
 
 print("")
