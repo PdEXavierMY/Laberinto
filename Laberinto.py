@@ -1,9 +1,10 @@
 muro = ((0,1), (0,2), (0,3), (0,4), (1,1), (2,1), (2,3), (3,3), (4,0), (4,1), (4,2), (4,3))
 estructura = len(muro)
-filasycolumnas = 5
+filas = 5
+columnas = 5
 #Se define con antelación el número de filas y columnas del laberinto
 laberinto = [[]]
-for p in range(filasycolumnas - 1):
+for p in range(filas - 1):
     laberinto += [[]]
 
 def comparacion(i, j):
@@ -17,11 +18,11 @@ def comparacion(i, j):
         laberinto[i].append(" ")
     return laberinto
 
-for i in range(filasycolumnas):
-    for j in range(filasycolumnas):
+for i in range(filas):
+    for j in range(columnas):
         comparacion(i, j)
 
-laberinto[filasycolumnas - 1][len(laberinto[filasycolumnas - 1]) - 1] = "S"
+laberinto[filas - 1][len(laberinto[filas - 1]) - 1] = "S"
 for z in range(len(laberinto) - 1):
     print(str(laberinto[z]) +  ",")
 print(laberinto[len(laberinto) - 1])
