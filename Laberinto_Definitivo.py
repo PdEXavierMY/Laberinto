@@ -27,3 +27,9 @@ for z in range(len(laberinto) - 1):
     print(str(laberinto[z]) +  ",")
 print(laberinto[len(laberinto) - 1])
 
+for i in range(filas):
+    for j in range(columnas):
+        if laberinto[i + 1][j] == " ":
+        if laberinto[i - 1][j] == " ":
+        if laberinto[i][j + 1] == " ":
+        if laberinto[i][j - 1] == " ":
