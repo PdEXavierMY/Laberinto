@@ -27,7 +27,6 @@ for z in range(len(laberinto) - 1):
     print(str(laberinto[z]) +  ",")
 print(laberinto[len(laberinto) - 1])
 
-movimientos = []
 for i in range(filas):
     laberinto[i].append("X")
 for i in range(filas):
@@ -41,32 +40,30 @@ for z in range(len(laberinto) - 1):
     print(str(laberinto[z]) +  ",")
 print(laberinto[len(laberinto) - 1])
 
-for i in range(filas):
-    for j in range(columnas):
-        if laberinto[i + 1][j] == IndexError:
-            continue
-        else: 
-            if laberinto[i + 1][j] == " ":
-                laberinto[i][j] = "."
-                movimientos += ["Abajo"]
-            if laberinto[i - 1][j] == IndexError:
-                continue
-            else: 
-                if laberinto[i - 1][j] == " ":
-                    laberinto[i][j] = "."
-                    movimientos += ["Arriba"]
-                if laberinto[i][j + 1] == IndexError:
-                    continue
-                else: 
-                    if laberinto[i][j + 1] == " ":
-                        laberinto[i][j] = "."
-                        movimientos += ["Derecha"]
-                    if laberinto[i][j - 1] == IndexError:
-                        continue
-                    else: 
-                        if laberinto[i][j - 1] == " ":
-                            laberinto[i][j] = "."
-                            movimientos += ["Izquierda"]
+def recorrido(i = 1, j = 1):
+    movimientos = []
+    if laberinto[i + 1][j] == " ":
+        laberinto[i][j] = "."
+        movimientos += ["Abajo"]
+        i += 1
+    elif laberinto[i - 1][j] == " ":
+        laberinto[i][j] = "."
+        movimientos += ["Arriba"]
+        i -= 1
+    elif laberinto[i][j + 1] == " ":
+        laberinto[i][j] = "."
+        movimientos += ["Derecha"]
+        j += 1
+    elif laberinto[i][j - 1] == " ":
+        laberinto[i][j] = "."
+        movimientos += ["Izquierda"]
+        j -= 1
+    return movimientos, laberinto
 
-print(laberinto)
+print("")
+movimientos = recorrido(i, j)[0]
+laberinto = recorrido(i, j)[1]
+for z in range(len(laberinto) - 1):
+    print(str(laberinto[z]) +  ",")
+print(laberinto[len(laberinto) - 1])
 print(movimientos)
