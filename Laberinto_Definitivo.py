@@ -28,6 +28,18 @@ for z in range(len(laberinto) - 1):
 print(laberinto[len(laberinto) - 1])
 
 movimientos = []
+for i in range(filas):
+    laberinto[i].append("X")
+for i in range(filas):
+    laberinto[i] = ["X"] + laberinto[i]
+techo_y_suelo = [["X"]]
+for i in range(columnas + 1):
+    techo_y_suelo[0] += ["X"]
+laberinto = techo_y_suelo + laberinto
+laberinto += techo_y_suelo
+for z in range(len(laberinto) - 1):
+    print(str(laberinto[z]) +  ",")
+print(laberinto[len(laberinto) - 1])
 
 for i in range(filas):
     for j in range(columnas):
@@ -36,25 +48,25 @@ for i in range(filas):
         else: 
             if laberinto[i + 1][j] == " ":
                 laberinto[i][j] = "."
-                movimientos += "Abajo"
+                movimientos += ["Abajo"]
             if laberinto[i - 1][j] == IndexError:
                 continue
             else: 
                 if laberinto[i - 1][j] == " ":
                     laberinto[i][j] = "."
-                    movimientos += "Arriba"
+                    movimientos += ["Arriba"]
                 if laberinto[i][j + 1] == IndexError:
                     continue
                 else: 
                     if laberinto[i][j + 1] == " ":
                         laberinto[i][j] = "."
-                        movimientos += "Derecha"
+                        movimientos += ["Derecha"]
                     if laberinto[i][j - 1] == IndexError:
                         continue
                     else: 
                         if laberinto[i][j - 1] == " ":
                             laberinto[i][j] = "."
-                            movimientos += "Izquierda"
+                            movimientos += ["Izquierda"]
 
 print(laberinto)
 print(movimientos)
