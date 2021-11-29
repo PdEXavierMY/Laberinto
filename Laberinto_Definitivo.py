@@ -1,8 +1,8 @@
 muro = ((0,1), (0,2), (0,3), (0,4), (1,1), (2,1), (2,3), (3,3), (4,0), (4,1), (4,2), (4,3))
 estructura = len(muro)
-ultima_coordenada = muro[(estructura - 1)][0]
+filas = 5
 laberinto = [[]]
-for p in range(ultima_coordenada):
+for p in range(filas - 1):
     laberinto += [[]]
 
 def comparacion(i, j):
@@ -16,12 +16,11 @@ def comparacion(i, j):
         laberinto[i].append(" ")
     return laberinto
 
-for i in range(ultima_coordenada + 1):
-    for j in range(ultima_coordenada + 1):
+for i in range(filas):
+    for j in range(filas):
         comparacion(i, j)
 
-laberinto[(len(laberinto) - 1)].pop()
-laberinto[(len(laberinto) - 1)].append("S")
+laberinto[filas - 1][len(laberinto[filas - 1]) - 1] = "S"
 for z in range(len(laberinto) - 1):
     print(str(laberinto[z]) +  ",")
 print(laberinto[len(laberinto) - 1])
