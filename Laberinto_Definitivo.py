@@ -27,9 +27,19 @@ for z in range(len(laberinto) - 1):
     print(str(laberinto[z]) +  ",")
 print(laberinto[len(laberinto) - 1])
 
+movimientos = []
+
 for i in range(filas):
     for j in range(columnas):
-        if laberinto[i + 1][j] == " ":
-        if laberinto[i - 1][j] == " ":
-        if laberinto[i][j + 1] == " ":
-        if laberinto[i][j - 1] == " ":
+        else laberinto[i + 1][j] == " ":
+            laberinto[i][j] = "."
+            movimientos += "Abajo"
+        else laberinto[i - 1][j] == " ":
+            laberinto[i][j] = "."
+            movimientos += "Arriba"
+        else laberinto[i][j + 1] == " ":
+            laberinto[i][j] = "."
+            movimientos += "Derecha"
+        else laberinto[i][j - 1] == " ":
+            laberinto[i][j] = "."
+            movimientos += "Izquierda"
