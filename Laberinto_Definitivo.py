@@ -23,9 +23,11 @@ for i in range(filas):
         comparacion(i, j)
 
 laberinto[filas - 1][len(laberinto[filas - 1]) - 1] = "S"
-for z in range(len(laberinto) - 1):
-    print(str(laberinto[z]) +  ",")
-print(laberinto[len(laberinto) - 1])
+def despliegue_laberinto():
+    for z in range(len(laberinto) - 1):
+        print(str(laberinto[z]) +  ",")
+    print(laberinto[len(laberinto) - 1])
+despliegue_laberinto()
 
 for i in range(filas):
     laberinto[i].append("X")
@@ -36,10 +38,6 @@ for i in range(columnas + 1):
     techo_y_suelo[0] += ["X"]
 laberinto = techo_y_suelo + laberinto
 laberinto += techo_y_suelo
-print("")
-for z in range(len(laberinto) - 1):
-    print(str(laberinto[z]) +  ",")
-print(laberinto[len(laberinto) - 1])
 
 i = 1
 j = 1
@@ -72,12 +70,9 @@ while condicion:
             movimientos += ["Derecha"]
         elif laberinto[i][j - 1] == "S":
             movimientos += ["Izquierda"]
+        else:
+            movimientos += ["Sin salida"]
         condicion = False
-
-print("")
-for z in range(len(laberinto) - 1):
-    print(str(laberinto[z]) +  ",")
-print(laberinto[len(laberinto) - 1])
 
 laberinto.pop()
 laberinto.pop(0)
@@ -85,7 +80,5 @@ for c in range(columnas):
     laberinto[c].pop()
     laberinto[c].pop(0)
 print("")
-for z in range(len(laberinto) - 1):
-    print(str(laberinto[z]) +  ",")
-print(laberinto[len(laberinto) - 1])
+despliegue_laberinto()
 print(movimientos)
