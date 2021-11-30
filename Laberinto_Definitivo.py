@@ -39,6 +39,7 @@ for i in range(columnas + 1):
     techo_y_suelo[0] += ["X"]
 laberinto = techo_y_suelo + laberinto
 laberinto += techo_y_suelo
+#Se añaden dos filas/columnas al laberinto por cada lado para evitar errores
 
 i = 1
 j = 1
@@ -82,6 +83,7 @@ laberinto.pop(0)
 for c in range(min(columnas, filas)):
     laberinto[c].pop()
     laberinto[c].pop(0)
+#Se elimina la capa de muros que se había añadido tras ya hacer el recorrido
 print("")
 despliegue_laberinto()
 print(movimientos)
