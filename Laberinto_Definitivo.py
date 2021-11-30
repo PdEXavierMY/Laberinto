@@ -45,7 +45,7 @@ i = 1
 j = 1
 movimientos = []
 condicion = True
-while condicion == True:
+while condicion:
     if laberinto[i + 1][j] == " ":
         laberinto[i][j] = "."
         movimientos += ["Abajo"]
