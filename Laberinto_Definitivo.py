@@ -1,7 +1,7 @@
-muro = ((0,1), (0,2), (0,3), (0,4), (1,1), (2,1), (2,3), (3,3), (4,0), (4,1), (4,2), (4,3))
+muro = ((0,1), (0,2), (0,3), (0,4), (0,6), (1,1), (1, 6), (2,1), (2,3), (2,5), (3,3), (3,5), (4,0), (4,1), (4,2), (4,3))
 estructura = len(muro)
-filas = 5
-columnas = 5
+filas = 6
+columnas = 7
 #Se define con antelación el número de filas y columnas del laberinto
 laberinto = [[]]
 for l in range(filas - 1):
@@ -45,7 +45,18 @@ j = 1
 movimientos = []
 condicion = True
 while condicion:
-    if laberinto[i + 1][j] == " ":
+    if laberinto[i + 1][j] == "S" or laberinto[i - 1][j] == "S" or laberinto[i][j+ 1] == "S" or laberinto[i - 1][j] == "S":
+        laberinto[i][j] = "."
+        if laberinto[i + 1][j] == "S":
+            movimientos += ["Abajo"]
+        elif laberinto[i - 1][j] == "S":
+            movimientos += ["Arriba"]
+        elif laberinto[i][j + 1] == "S":
+            movimientos += ["Derecha"]
+        elif laberinto[i][j - 1] == "S":
+            movimientos += ["Izquierda"]
+        break
+    elif laberinto[i + 1][j] == " ":
         laberinto[i][j] = "."
         movimientos += ["Abajo"]
         i += 1
@@ -62,22 +73,12 @@ while condicion:
         movimientos += ["Izquierda"]
         j -= 1
     else:
-        laberinto[i][j] = "."
-        if laberinto[i + 1][j] == "S":
-            movimientos += ["Abajo"]
-        elif laberinto[i - 1][j] == "S":
-            movimientos += ["Arriba"]
-        elif laberinto[i][j + 1] == "S":
-            movimientos += ["Derecha"]
-        elif laberinto[i][j - 1] == "S":
-            movimientos += ["Izquierda"]
-        else:
-            movimientos += ["Sin salida"]
-        condicion = False
+        movimientos += ["Sin salida"]
+        break
 
 laberinto.pop()
 laberinto.pop(0)
-for c in range(columnas):
+for c in range(min(columnas, filas)):
     laberinto[c].pop()
     laberinto[c].pop(0)
 print("")
