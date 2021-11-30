@@ -1,7 +1,7 @@
-muro = ((0,1), (0,2), (0,3), (0,4), (0,6), (1,1), (1, 6), (2,1), (2,3), (2,5), (3,3), (3,5), (4,0), (4,1), (4,2), (4,3), (5,5))
+muro = ((0,1), (0,2), (0,3), (0,4), (1,1), (2,1), (2,3), (3,3), (4,0), (4,1), (4,2), (4,3))
 estructura = len(muro)
-filas = 6
-columnas = 7
+filas = 5
+columnas = 5
 #Se define con antelación el número de filas y columnas del laberinto
 laberinto = [[]]
 for l in range(filas - 1):
