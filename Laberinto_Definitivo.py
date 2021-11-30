@@ -23,6 +23,7 @@ for i in range(filas):
         comparacion(i, j)
 
 laberinto[filas - 1][len(laberinto[filas - 1]) - 1] = "S"
+
 def despliegue_laberinto():
     for z in range(len(laberinto) - 1):
         print(str(laberinto[z]) +  ",")
