@@ -1,6 +1,6 @@
 # Laberinto
 
-Este es el enlace a mi repositorio:
+Este es el enlace a mi repositorio: [ Mi Github](https://github.com/Xavitheforce/Laberinto)
 
 Aquí debajo dejo los diagramas de flujo(son dos porque uno solo me quedaría muuy largo y además ya los tenía hechos ;))
 
