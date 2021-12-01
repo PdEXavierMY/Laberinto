@@ -39,7 +39,7 @@ for i in range(columnas + 1):
     techo_y_suelo[0] += ["X"]
 laberinto = techo_y_suelo + laberinto
 laberinto += techo_y_suelo
-#Se añaden dos filas/columnas al laberinto por cada lado para evitar errores
+#Se añaden dos filas/columnas al laberinto por cada lado para evitar errores al comparar con las casillas de alrededor
 
 i = 1
 j = 1
