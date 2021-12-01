@@ -84,3 +84,5 @@ for c in range(min(columnas, filas)):
 print("")
 despliegue_laberinto()
 print(movimientos)
+
+#Yo no he contado la posición inicial como un movimiento, y por eso solo salen 3 abajos en la lista en vez de 4
