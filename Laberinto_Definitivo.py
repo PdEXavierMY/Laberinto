@@ -46,8 +46,8 @@ j = 1
 movimientos = []
 condicion = True
 while condicion:
+    laberinto[i][j] = "*"
     if laberinto[i + 1][j] == "S" or laberinto[i - 1][j] == "S" or laberinto[i][j+ 1] == "S" or laberinto[i - 1][j] == "S":
-        laberinto[i][j] = "*"
         if laberinto[i + 1][j] == "S":
             movimientos += ["Abajo"]
         elif laberinto[i - 1][j] == "S":
@@ -58,7 +58,6 @@ while condicion:
             movimientos += ["Izquierda"]
         break
     elif laberinto[i + 1][j] == " " or laberinto[i - 1][j] == " " or laberinto[i][j+ 1] == " " or laberinto[i - 1][j] == " ":
-        laberinto[i][j] = "*"
         if laberinto[i + 1][j] == " ":
             movimientos += ["Abajo"]
             i += 1
